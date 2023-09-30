@@ -80,19 +80,19 @@ document.getElementById("item").addEventListener("click",(event)=>{
         console.log(event.target.innerText)
         getImageOfTheDay(event.target.innerText)
     })
-// window.onload = function getCurrentImageOfTheDay(){
-//     const currentDate = new Date().toISOString().split("T")[0]; 
-//     const url = `https://api.nasa.gov/planetary/apod?date=${currentDate}&api_key=${ApiKey}`
-//     let promise = fetch(url)
-//     promise
-//     .then((data)=>{
-//         return data.json();
-//     })
-//     .then((response)=>{
-//         // console.log(response)
-//         renderUI(response);
-//     })
-//     .catch((e)=>{
-//         console.log("something went wrong "+e)
-//     })
-// }
+window.onload = function getCurrentImageOfTheDay(){
+    const currentDate = new Date().toISOString().split("T")[0]; 
+    const url = `https://api.nasa.gov/planetary/apod?date=${currentDate}&api_key=${ApiKey}`
+    let promise = fetch(url)
+    promise
+    .then((data)=>{
+        return data.json();
+    })
+    .then((response)=>{
+        // console.log(response)
+        renderUI(response);
+    })
+    .catch((e)=>{
+        console.log("something went wrong "+e)
+    })
+}
